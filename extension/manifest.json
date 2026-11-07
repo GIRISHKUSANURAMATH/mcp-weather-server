@@ -1,0 +1,28 @@
+{
+  "manifest_version": "0.3",
+  "name": "mcp-weather-server",
+  "display_name": "Weather (NWS)",
+  "version": "1.0.0",
+  "description": "US National Weather Service alerts and forecasts: get_alerts and get_forecast.",
+  "long_description": "Local MCP server exposing two tools backed by the US National Weather Service API (api.weather.gov): get_alerts (active alerts for a US state or territory code) and get_forecast (7-day forecast for US latitude/longitude). Coverage is limited to the United States and its territories.",
+  "author": { "name": "Girish Kusanuramath" },
+  "license": "MIT",
+  "keywords": ["weather", "nws", "forecast", "alerts"],
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"],
+      "env": {}
+    }
+  },
+  "tools": [
+    { "name": "get_alerts", "description": "Active NWS weather alerts for a two-letter US state or territory code." },
+    { "name": "get_forecast", "description": "NWS forecast for a US latitude/longitude." }
+  ],
+  "compatibility": {
+    "platforms": ["win32", "darwin", "linux"],
+    "runtimes": { "node": ">=20.0.0" }
+  }
+}

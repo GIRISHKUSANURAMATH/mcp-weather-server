@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output (recreate with: npm run build)
+dist/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test / coverage
+coverage/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Claude Desktop extension: built artifact (recreate with: npm run build && npm run pack:mcpb).
+# Publish it as a GitHub Release asset instead of committing it.
+*.mcpb
+extension/server/
+
+# Local backups
+*.backup*
